@@ -1,23 +1,29 @@
 <template>
   <div id="app" @touchmove.prevent>
-    <!-- <heador></heador> -->
+    <Heador/>
+    <Tab/>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
     <!-- <img src="./assets/logo.png">
     <router-view/> -->
     <!-- <router-view></router-view> -->
     <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
+    <!-- <router-view/> -->
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-// import Heador from 'components/header/heador.vue'
+import Heador from "@/components/header/header.vue"
+import Tab from "@/components/tab/tab.vue"
 // import HelloWorld from 'components/HelloWorld'
 
 export default {
-  name:'App'
-  // components:{
-  //   Heador
-  // }
+  // name:'App'
+  components: {
+      Heador,
+      Tab
+  }
 }
 </script>
 

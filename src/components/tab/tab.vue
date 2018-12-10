@@ -21,8 +21,8 @@
 </script>
 
 <style scoped lang="scss">
-  @import "@/assets/css/variable.scss";
-  @import "@/assets/css/element.scss";
+    @import "@/assets/css/variable.scss";
+    @import "@/assets/css/element.scss";
 
     .tab{
         @include list(row);

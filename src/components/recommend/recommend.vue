@@ -1,0 +1,141 @@
+<template>
+    <div class="recommend" ref="recommend">
+        <scroll class="recomment-content" ref="scroll" :data="discList">
+            <div>
+                <div v-if="recommends.length" class="slider-wrapper">
+                    <div class="slider-content">
+                        <slider ref="slider">
+                            <div v-for="item in recommends">
+                                <a :href="item.linkUrl">
+                                    <img @load="loadImage" :src="item.picUrl">
+                                </a>
+                            </div>
+                        </slider>
+                    </div>
+                </div>
+            </div>
+        </scroll>
+
+        <!-- <div v-if="recommends.length" class="slider-wrapper">
+            <div class="slider-content">
+                <slider ref="slider">
+                    <div v-for="item in recommends" :key="item.id">
+                        <a :href="item.linkUrl">
+                            <img @load="loadImage" :src="item.picUrl">
+                        </a>
+                    </div>
+                </slider>
+            </div>
+        </div> -->
+    </div>
+</template>
+
+<script>
+import Scroll from "../baseComponents/scroll/scroll"
+import Slider from "../baseComponents/scroll/scroll"
+
+export default {
+    data() {
+        return {
+            recommends:[
+                {
+                    id:"01",
+                    linkUrl:"http://www.baidu.com",
+                    picUrl:"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1095252.jpg"
+                },
+                {
+                    id:"02",
+                    linkUrl:"http://www.baidu.com",
+                    picUrl:"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1095022.jpg"
+                },
+                {
+                    id:"03",
+                    linkUrl:"http://www.baidu.com",
+                    picUrl:"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1093790.jpg"
+                }
+            ],
+            discList:[]
+        }
+    },
+    created() {
+
+    },
+    methods:{
+        loadImage() {
+            
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+    @import "@/assets/css/variable.scss";
+
+    .recommend{
+        position:fixed;
+        width:100%;
+        top:88px;
+        bottom: 0;
+        .recomment-content{
+            height:100%;
+            overflow: hidden;
+            .slider-wrapper{
+                position: relative;
+                width:100%;
+                height: 0;
+                padding-top:40%;
+                overflow: hidden;
+                .slider-content{
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                }
+            }
+            .recommend-list{
+                .list-title{
+                    height: 65px;
+                    line-height: 65px;
+                    text-align: center;
+                    font-size: $font-size-medium;
+                    color: $color-theme;
+                }
+                .item{
+                    display: flex;
+                    box-sizing: border-box;
+                    align-items: center;
+                    padding: 0 20px 20px 20px;
+                    .icon{
+                        flex: 0 0 60px;
+                        width: 60px;
+                        padding-right: 20px;
+                    }
+                    .text{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        flex: 1;
+                        line-height: 20px;
+                        overflow: hidden;
+                        font-size: $font-size-medium;
+                        .name{
+                            margin-bottom: 10px;
+                            color: $color-text;
+                        }
+                        .desc{
+                            color: $color-text-d;
+                        }
+                    }
+                }
+            }
+            .loading-container{
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+       
+        }
+    }
+</style>
