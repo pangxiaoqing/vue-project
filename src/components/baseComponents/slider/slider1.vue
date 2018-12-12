@@ -1,52 +1,72 @@
 <template>
-    <section :class="cname">
-        <swiper :options="options" :not-next-tick="options.notNextTick">
-            <swiper-slide v-for="item in items" :key="item.href">
-                <router-link :to="{ name: item.href}">
-                    <img :src="item.src" alt="">
-                </router-link>
-            </swiper-slide>
-            <div v-if="options.pagination" slot="pagination" class="swiper-pagination"/>
-        </swiper>
-    </section>
+  <div class="slider" ref="slider">
+    <div class="slider-group" ref="sliderGroup">
+      <slot>
+      </slot>
+    </div>
+    <div class="dots">
+      <span class="dot" :class="{active: currentPageIndex === index }" v-for="(item, index) in dots"></span>
+    </div>
+  </div>
 </template>
 
 <script>
-import { swiper, swiperSlide } from "vue-awesome-swiper"
+import BScroll from "better-scroll"
 
 export default {
-    components: {
-        swiper,
-        swiperSlide,
-    },
-    props: {
-        cname: {
-            type: String,
-            default: "",
-        },
-        options: {
-            type: Object,
-            default() {
-                return {
-                    autoplay: true,
-                    loop: true,
-                    pagination: {
-                        el: ".swiper-pagination",
-                    },
-                    notNextTick: false,
-                }
-            },
-        },
-        items: {
-            type: Array,
-            default() {
-                return []
-            },
-        },
-    },
+    
 }
 </script>
 
-<style lang="css">
-  @import "~swiper/dist/css/swiper.css";
+<style lang="scss" scoped>
+    @import "@/assets/css/variable.scss";
+
+    .slider{
+        min-height: 1px;
+        .slider-group{
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            .slider-item{
+                float: left;
+                box-sizing: border-box;
+                overflow: hidden;
+                text-align: center;
+                a{
+                    display:block;
+                    width:100%;
+                    overflow: hidden;
+                    text-decoration: none;
+                }
+                img{
+                    display:block;
+                    width:100%;
+                }
+            }
+        }
+        .dots{
+            position:absolute;
+            right:0;
+            left:0;
+            bottom: 12px;
+            transform: translateZ(1px);
+            text-align: center;
+            font-size: 0;
+            .dot{
+                display:inline-block;
+                margin:0 4px;
+                width:8px;
+                height:8px;
+                border-radius: 50%;
+                background: $color-text-l;
+                &.active{
+                    width:20px;
+                    border-radius: 5px;
+                    background: $color-text-ll;
+                }
+            }
+        }
+    }
 </style>
+
+

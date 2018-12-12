@@ -18,25 +18,25 @@
 @import "@/assets/css/mixin.scss";
 .header{
     position: relative;
-    height:44px;
+    height:88px;
     text-align: center;
     color:$color-theme;
     font-size:0;
     .icon{
-        display:inline-block;
+        background-repeat: no-repeat;
+        display: inline-block;
         vertical-align: top;
-        margin-top:6px;
-        width:30px;
-        height:32px;
-        margin-right:9px;
-        // @include bg-image('logo');
-        background-size: 30px 32px;
+        margin-top: 12px;
+        width: 60px;
+        height: 64px;
+        margin-right: 9px;
+        background-size: 60px 64px;
         background-image: url("logo@2x.png");
     }
     .text{
         display: inline-block;
         vertical-align: top;
-        line-height: 44px;
+        line-height: 88px;
         font-size:$font-size-large;
         font-weight: bold;
     }
@@ -46,13 +46,13 @@
         right:0;
         .icon-mine{
             display: block;
-            margin-top:10px;
-            margin-right: 10px;
+            margin-top:20px;
+            margin-right: 20px;
             color:$color-theme;
             background: url("user.png") no-repeat;
-            background-size:30px 30px;
-            width:30px;
-            height:30px;
+            background-size:60px 60px;
+            width:60px;
+            height:60px;
         }
     }
 }

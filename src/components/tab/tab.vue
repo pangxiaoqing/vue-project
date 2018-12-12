@@ -26,20 +26,20 @@ export default {}
 
     .tab{
         @include list(row);
-        height:44px;
-        line-height:44px;
+        height:88px;
+        line-height:88px;
         font-size:$font-size-medium;
         .tab-item{
             flex:1;
             text-align: center;
             .tab-link{
-                padding-bottom:5px;
+                padding-bottom:10px;
                 color:$color-text-l;
             }
             &.router-link-active
             .tab-link{
                 color:$color-theme;
-                border-bottom: 2px solid $color-theme
+                border-bottom: 4px solid $color-theme
             }
         }
     }
