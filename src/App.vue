@@ -1,55 +1,19 @@
 <template>
   <div id="app" @touchmove.prevent>
-    <Heador/>
-    <Tab/>
-    <keep-alive>
-      <router-view></router-view>
-    </keep-alive>
-    <!-- <img src="./assets/logo.png">
-    <router-view/> -->
-    <!-- <router-view></router-view> -->
-    <!-- <img src="./assets/logo.png"> -->
-    <!-- <router-view/> -->
+    <router-view/>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import Heador from "@/components/header/header.vue"
-import Tab from "@/components/tab/tab.vue"
-// import HelloWorld from 'components/HelloWorld'
+  export default {
 
-export default {
-  // name:'App'
-  components: {
-      Heador,
-      Tab
   }
-}
 </script>
 
-<style lang="scss">
-@import "assets/css/reset.scss";
+<style>
+@import "./assets/css/reset.css";
 
-// $color:red;
-// #app {
-//   background-color: $color;
-// }
-// #app {
-//   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   text-align: center;
-//   color: #2c3e50;
-//   margin-top: 60px;
-// }
-
-
-// #app {
-//   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   text-align: center;
-//   color: #2c3e50;
-//   margin-top: 60px;
-// }
+#app{
+  background: #F5F5F6;
+}
 </style>

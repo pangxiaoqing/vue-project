@@ -1,18 +1,17 @@
 <template>
     <section :class="cname">
         <swiper :options="options" :not-next-tick="options.notNextTick">
-            <swiper-slide v-for="(item,index) in items" :key="index">
-                <router-link :to="{ name: item.href}">
-                    <img :src="item.src" alt="">
-                </router-link>
+            <swiper-slide v-for="item in items" :key="item.img">
+                <!-- <img :src="item.img" alt=""> -->
+                <img src="../../assets/img/img.jpg" alt="">
+                <slot name="item" :price="item.price" :title="item.title" :tagId="item.tagId" />
             </swiper-slide>
             <div v-if="options.pagination" slot="pagination" class="swiper-pagination"/>
-        </swiper>
+        </swiper> 
     </section>
 </template>
 
 <script>
-import 'vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from "vue-awesome-swiper"
 
 export default {
@@ -29,6 +28,8 @@ export default {
             type: Object,
             default() {
                 return {
+                    observer:true,//修改swiper自己或子元素时，自动初始化swiper 
+                    observeParents:true,//修改swiper的父元素时，自动初始化swiper 
                     autoplay: true,
                     loop: true,
                     pagination: {
@@ -49,5 +50,14 @@ export default {
 </script>
 
 <style lang="css">
-  /* @import "~swiper/dist/css/swiper.css"; */
+  @import "swiper/dist/css/swiper.css";
+ 
+  .swiper-pagination-bullet{
+      background: #fff;
+      opacity: 0.6;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #007aff;
+  }
 </style>
