@@ -18,7 +18,7 @@ export default {
         background-color:#fff;
         padding:0 5%;
         text-align: center;
-        position: relative;
+        position: fixed;
     }
     .header img{
         width:24px;

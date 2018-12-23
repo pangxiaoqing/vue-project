@@ -16,4 +16,13 @@
 #app{
   background: #F5F5F6;
 }
+#app img{
+  margin:0;
+  padding:0;
+  border:none;
+}
+/* .app_content{
+  flex:1;
+  overflow-y:auto;
+} */
 </style>

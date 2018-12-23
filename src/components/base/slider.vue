@@ -3,6 +3,7 @@
         <swiper :options="options" :not-next-tick="options.notNextTick">
             <swiper-slide v-for="item in items" :key="item.img">
                 <!-- <img :src="item.img" alt=""> -->
+                <!-- <img v-lazy="item.img" alt=""> -->
                 <img src="../../assets/img/img.jpg" alt="">
                 <slot name="item" :price="item.price" :title="item.title" :tagId="item.tagId" />
             </swiper-slide>
@@ -49,7 +50,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style>
   @import "swiper/dist/css/swiper.css";
  
   .swiper-pagination-bullet{

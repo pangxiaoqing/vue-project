@@ -35,18 +35,26 @@ export default {
         align-items: center;
         position:fixed;
         bottom: 0;
+        border-top:1px solid #E5E5E7;
     }
     .tab_item{
+        width:50%;
         text-align: center;
         font-size:12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-right: 1px solid #E5E5E7;
     }
     .tab_link{
         height:49px;
         line-height:49px;
         background-size:24px 24px;
         background-repeat: no-repeat;
-        padding-top: 10px;
-        margin-top: 18px;
+        padding-top: 14px;
+        box-sizing: border-box;
+        /* background-origin: center center; */
+        background-position: center 5px;
     }
     .tab_home,.tab_list{
         color:#8C8C8C;

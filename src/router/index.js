@@ -5,6 +5,8 @@ Vue.use(Router)
 
 const Index = () => import('@/components/home/index')
 const NavList = () => import('@/components/navList/navList')
+const NavListDetail = () => import('@/components/navListDetail/navListDetail')
+const NavListDetailTicket = () => import('@/components/navListDetail/navListDetailTicket/navListDetailTicket.vue')
 
 
 export default new Router({
@@ -16,22 +18,20 @@ export default new Router({
     {
       path: '/index',
       component: Index
-      // children: [
-      //   {
-      //     path: ':id',
-      //     component: Disc
-      //   }
-      // ]
     },
     {
       path: '/navList',
       component: NavList
-      // children: [
-      //   {
-      //     path: ':id',
-      //     component: Disc
-      //   }
-      // ]
+    },
+    {
+      path:'/navListDetail',
+      component:NavListDetail,
+      children: [
+        {
+          path: '/navListDetailTicket',
+          component: NavListDetailTicket
+        }
+      ]
     }
   ]
 })

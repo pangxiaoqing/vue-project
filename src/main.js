@@ -3,10 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// import 'swiper/dist/css/swiper.css';
+import VueLazyLoad from 'vue-lazyload'
 
 Vue.config.productionTip = false
 
+Vue.use(VueLazyLoad,{
+  loading:require('./assets/img/default.jpg')
+})
 /* eslint-disable no-new */
 // new Vue({
 //   el: '#app',
